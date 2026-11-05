@@ -1,0 +1,20 @@
+{
+  "updated_at": "2026-11-05T12:48:38.830213+00:00",
+  "target_images": 48,
+  "by_split": {
+    "mise_au_point": 33,
+    "evaluation": 15
+  },
+  "multi_by_content": {
+    "pomme": 5,
+    "banane": 5,
+    "poivron": 5,
+    "pomme|banane": 1,
+    "pomme|banane|citron": 1,
+    "pomme|banane|grenade|poivron": 1
+  },
+  "status": "applique",
+  "available_images": 48,
+  "archive": "history/20261105T124900997141Z",
+  "new_downloads": 8
+}

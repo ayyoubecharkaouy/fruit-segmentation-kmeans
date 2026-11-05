@@ -1,0 +1,33 @@
+{
+  "seed": 42,
+  "sources": {
+    "fruits360_simple": {
+      "repository": "fruits-360/fruits-360-100x100",
+      "ref": "main",
+      "license": "CC-BY-SA-4.0"
+    },
+    "fruits360_multi": {
+      "repository": "fruits-360/fruits-360-multi",
+      "ref": "main",
+      "license": "CC-BY-SA-4.0"
+    }
+  },
+  "groups": [
+    {"id": "pomme_red", "source": "fruits360_simple", "directory": "Training/Apple Red 1", "count": 2, "fruit_types": "pomme", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "pomme_golden", "source": "fruits360_simple", "directory": "Training/Apple Golden 1", "count": 2, "fruit_types": "pomme", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "pomme_braeburn", "source": "fruits360_simple", "directory": "Training/Apple Braeburn 1", "count": 2, "fruit_types": "pomme", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "pomme_granny", "source": "fruits360_simple", "directory": "Training/Apple Granny Smith 1", "count": 2, "fruit_types": "pomme", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "evaluation"},
+    {"id": "pomme_pink_lady", "source": "fruits360_simple", "directory": "Training/Apple Pink Lady 1", "count": 2, "fruit_types": "pomme", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "evaluation"},
+    {"id": "banane_1", "source": "fruits360_simple", "directory": "Training/Banana 1", "count": 2, "fruit_types": "banane", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "banane_3", "source": "fruits360_simple", "directory": "Training/Banana 3", "count": 2, "fruit_types": "banane", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "banane_4", "source": "fruits360_simple", "directory": "Training/Banana 4", "count": 2, "fruit_types": "banane", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "banane_red", "source": "fruits360_simple", "directory": "Training/Banana Red 1", "count": 2, "fruit_types": "banane", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "banane_lady_finger_simple", "scene_id": "banane_lady_finger", "source": "fruits360_simple", "directory": "Training/Banana Lady Finger 1", "count": 2, "fruit_types": "banane", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "evaluation"},
+    {"id": "poivron_red", "source": "fruits360_simple", "directory": "Training/Pepper Red 1", "count": 3, "fruit_types": "poivron", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "poivron_green", "source": "fruits360_simple", "directory": "Training/Pepper Green 1", "count": 3, "fruit_types": "poivron", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "mise_au_point"},
+    {"id": "poivron_yellow", "source": "fruits360_simple", "directory": "Training/Pepper Yellow 1", "count": 2, "fruit_types": "poivron", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "evaluation"},
+    {"id": "poivron_orange", "source": "fruits360_simple", "directory": "Training/Pepper Orange 1", "count": 2, "fruit_types": "poivron", "background": "blanc_pretraite", "difficulty": "facile_attendue", "split": "evaluation"},
+    {"id": "pommes_multi", "source": "fruits360_multi", "directory": "test-multiple_fruits", "count": 10, "files": ["apple_1.jpg", "apple_2.jpg", "apple_3.jpg", "apple_4.jpg", "apple_5.jpg", "apple_6.jpg", "apple_7.jpg", "apple_8.jpg", "apple_9.jpg", "apple_10.jpg"], "fruit_types": "pomme", "background": "a_verifier", "difficulty": "a_verifier", "split": "mise_au_point"},
+    {"id": "bananes_multi", "scene_id": "banane_lady_finger", "source": "fruits360_multi", "directory": "test-multiple_fruits", "count": 5, "files": ["Banana(lady_finger)_1.jpg", "Banana(lady_finger)_2.jpg", "Banana(lady_finger)_3.jpg", "Banana(lady_finger)_4.jpg", "Banana(lady_finger)_5.jpg"], "fruit_types": "banane", "background": "a_verifier", "difficulty": "a_verifier", "split": "evaluation"}
+  ]
+}
