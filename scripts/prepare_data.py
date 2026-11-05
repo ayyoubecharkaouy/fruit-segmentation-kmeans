@@ -25,6 +25,7 @@ FIELDS = [
     "image_id", "filename", "source", "fruit_types", "background", "lighting",
     "difficulty", "scene_id", "split", "source_file", "source_url", "commit",
     "license", "width", "height", "sha256", "annotation_status", "review_status",
+    "original_filename", "dataset_title", "provenance_status",
 ]
 LIMIT = 25 * 1024 * 1024
 
@@ -156,6 +157,7 @@ def build_manifest(plan, previous=None):
     previous_items = {(item["source"], item["source_file"]): item for item in previous["items"]}
     next_id = max((int(re.fullmatch(r"img(\d+)", item["image_id"])[1])
                    for item in previous["items"]), default=0) + 1
+    reserved_ids = {item["image_id"] for item in plan.get("local_items", [])}
     commits, root_trees = {}, {}
     for source_id, source in plan["sources"].items():
         commit = previous["commits"].get(source_id)
@@ -202,6 +204,8 @@ def build_manifest(plan, previous=None):
             if existing:
                 image_id = existing["image_id"]
             else:
+                while f"img{next_id:03d}" in reserved_ids:
+                    next_id += 1
                 image_id = f"img{next_id:03d}"
                 next_id += 1
             suffix = Path(entry["name"]).suffix.lower()
@@ -221,15 +225,22 @@ def build_manifest(plan, previous=None):
                 for field in ("background", "lighting", "difficulty", "review_status", "annotation_status"):
                     items[-1][field] = existing[field]
     validate_items(items)
+    items.extend(dict(item) for item in plan.get("local_items", []))
+    validate_items(items)
     return {"seed": plan["seed"], "commits": commits, "items": items}
 
 
 def verify_payload(item, payload):
-    blob_sha = hashlib.sha1(b"blob " + str(len(payload)).encode() + b"\0" + payload).hexdigest()
-    if blob_sha != item["git_blob_sha"]:
-        raise ValueError("Le fichier ne correspond pas à la version GitHub sélectionnée")
+    checksum = hashlib.sha256(payload).hexdigest()
+    if item.get("storage") == "local":
+        if not item.get("sha256") or checksum != item["sha256"]:
+            raise ValueError("Le fichier ajouté localement a changé depuis son inventaire")
+    else:
+        blob_sha = hashlib.sha1(b"blob " + str(len(payload)).encode() + b"\0" + payload).hexdigest()
+        if blob_sha != item["git_blob_sha"]:
+            raise ValueError("Le fichier ne correspond pas à la version GitHub sélectionnée")
     width, height = image_info(payload)
-    return {"width": width, "height": height, "sha256": hashlib.sha256(payload).hexdigest()}
+    return {"width": width, "height": height, "sha256": checksum}
 
 
 def audit(manifest):
@@ -257,26 +268,83 @@ def save_inventory(records):
     with temporary.open("w", encoding="utf-8", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=FIELDS, extrasaction="ignore")
         writer.writeheader()
-        writer.writerows(records)
+        for record in records:
+            exported = dict(record)
+            exported.setdefault("original_filename", Path(record.get("source_file", "")).name)
+            exported.setdefault("dataset_title", {
+                "fruits360_simple": "Fruits-360 100x100",
+                "fruits360_multi": "Fruits-360 multi",
+            }.get(record["source"], record["source"]))
+            exported.setdefault("provenance_status", "source_versionnee" if record.get("git_blob_sha") else "a_documenter")
+            writer.writerow(exported)
     temporary.replace(path)
 
 
 def contact_sheet(records):
-    from PIL import Image, ImageDraw, ImageOps
-    columns, cell_w, cell_h = 5, 190, 175
+    from PIL import Image, ImageDraw, ImageFont, ImageOps
+    columns, cell_w, padding, gap, margin = 5, 244, 12, 16, 24
+    preview_h, header_h, line_h = 170, 100, 20
     rows = (len(records) + columns - 1) // columns
     if not rows:
         return
-    sheet = Image.new("RGB", (columns * cell_w, rows * cell_h), "white")
+
+    def font(size, bold=False):
+        try:
+            return ImageFont.truetype("DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf", size)
+        except OSError:
+            return ImageFont.load_default()
+
+    title_font, id_font, body_font = font(24, True), font(16, True), font(14)
+    measure = ImageDraw.Draw(Image.new("RGB", (1, 1)))
+
+    def wrap_caption(text):
+        lines, current = [], ""
+        for word in text.replace("|", ", ").split():
+            candidate = f"{current} {word}".strip()
+            if current and measure.textlength(candidate, font=body_font) > cell_w - 2 * padding:
+                lines.append(current)
+                current = word
+            else:
+                current = candidate
+        return lines + [current]
+
+    captions = [wrap_caption(record["fruit_types"]) for record in records]
+    caption_lines = max(map(len, captions))
+    cell_h = padding + preview_h + 12 + 24 + caption_lines * line_h + 10 + 24 + padding
+    width = 2 * margin + columns * cell_w + (columns - 1) * gap
+    height = header_h + rows * cell_h + (rows - 1) * gap + margin
+    sheet = Image.new("RGB", (width, height), "#f3f4f6")
     draw = ImageDraw.Draw(sheet)
+    counts = Counter(record["split"] for record in records)
+    draw.text((margin, 20), "Jeu d'images - aperçu", font=title_font, fill="#111827")
+    summary = (f"{len(records)} images | {counts['mise_au_point']} mise au point | "
+               f"{counts['evaluation']} évaluation")
+    draw.text((margin, 57), summary, font=body_font, fill="#4b5563")
+
     for index, record in enumerate(records):
-        x, y = index % columns * cell_w, index // columns * cell_h
+        x = margin + index % columns * (cell_w + gap)
+        y = header_h + index // columns * (cell_h + gap)
+        draw.rounded_rectangle((x, y, x + cell_w - 1, y + cell_h - 1), radius=8,
+                               fill="white", outline="#d1d5db")
         with Image.open(DATA / record["filename"]) as image:
-            preview = ImageOps.contain(ImageOps.exif_transpose(image).convert("RGB"), (180, 135))
-        sheet.paste(preview, (x + (cell_w - preview.width) // 2, y + 5))
-        draw.text((x + 5, y + 143), f'{record["image_id"]} | {record["fruit_types"]}', fill="black")
-        draw.text((x + 5, y + 158), record["split"], fill="black")
-    sheet.save(DATA / "apercu.jpg", quality=90)
+            preview = ImageOps.contain(ImageOps.exif_transpose(image).convert("RGB"),
+                                       (cell_w - 2 * padding, preview_h))
+        sheet.paste(preview, (x + (cell_w - preview.width) // 2,
+                             y + padding + (preview_h - preview.height) // 2))
+        text_y = y + padding + preview_h + 12
+        draw.text((x + padding, text_y), record["image_id"], font=id_font, fill="#111827")
+        for offset, caption in enumerate(captions[index]):
+            draw.text((x + padding, text_y + 24 + offset * line_h), caption,
+                      font=body_font, fill="#374151")
+        evaluation = record["split"] == "evaluation"
+        label = "Évaluation" if evaluation else "Mise au point"
+        badge_y = y + cell_h - padding - 24
+        badge_w = int(draw.textlength(label, font=body_font)) + 16
+        draw.rounded_rectangle((x + padding, badge_y, x + padding + badge_w, badge_y + 24),
+                               radius=5, fill="#dcfce7" if evaluation else "#dbeafe")
+        draw.text((x + padding + 8, badge_y + 3), label, font=body_font,
+                  fill="#166534" if evaluation else "#1e40af")
+    sheet.save(DATA / "apercu.jpg", quality=95, subsampling=0)
 
 
 def save_report(manifest, errors=()):
@@ -285,15 +353,22 @@ def save_report(manifest, errors=()):
                         if not (DATA / "licenses" / f"{source_id}.txt").is_file()]
     save_inventory(records)
     contact_sheet(records)
+    managed = {item["filename"] for item in manifest["items"]}
+    untracked = sorted(str(path.relative_to(DATA)) for path in (DATA / "raw").rglob("*")
+                       if path.is_file() and path.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")
+                       and str(path.relative_to(DATA)) not in managed)
+    provenance_pending = [item["image_id"] for item in manifest["items"]
+                          if not item.get("source_url") or item.get("license") in (None, "", "a_verifier")]
     report = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
-        "status": "telecharge_a_revoir" if not (missing or invalid or duplicates or missing_licenses or errors) else "incomplet",
+        "status": "telecharge_a_revoir" if not (missing or invalid or duplicates or missing_licenses or untracked or errors) else "incomplet",
         "planned_images": len(manifest["items"]), "available_images": len(records),
         "by_split": dict(Counter(row["split"] for row in records)),
         "by_source": dict(Counter(row["source"] for row in records)),
         "missing_images": missing, "invalid_images": invalid,
         "missing_licenses": missing_licenses,
         "duplicate_groups": duplicates, "download_errors": list(errors),
+        "untracked_images": untracked, "provenance_pending": provenance_pending,
         "visual_review_required": True, "ground_truth_masks_available": False,
     }
     write_json(DATA / "preparation_status.json", report)
@@ -309,11 +384,12 @@ def main():
     parser.add_argument("--check", action="store_true", help="Vérifier les fichiers déjà téléchargés, sans réseau")
     args = parser.parse_args()
     plan = json.loads((DATA / "selection_plan.json").read_text(encoding="utf-8"))
-    total = sum(group["count"] for group in plan["groups"])
+    total = sum(group["count"] for group in plan["groups"]) + len(plan.get("local_items", []))
     if args.plan:
         by_split = Counter()
         for group in plan["groups"]:
             by_split[group["split"]] += group["count"]
+        by_split.update(item["split"] for item in plan.get("local_items", []))
         print(json.dumps({"planned_images": total, "by_split": dict(by_split)}, ensure_ascii=False, indent=2))
         return 0
     metadata_path = DATA / "metadata.csv"
@@ -362,6 +438,9 @@ def main():
                     verify_payload(item, path.read_bytes())
                     print(f'[{index}/{len(manifest["items"])}] {item["image_id"]} déjà vérifiée', flush=True)
                     continue
+                if item.get("storage") == "local":
+                    raise ValueError("Ajout local absent : restaurer le fichier d'origine ; "
+                                     "le lien du jeu Kaggle n'est pas une URL de téléchargement de cette image")
                 payload = fetch(item["source_url"])
                 verify_payload(item, payload)
                 path.parent.mkdir(parents=True, exist_ok=True)

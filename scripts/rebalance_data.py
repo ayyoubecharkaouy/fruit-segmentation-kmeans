@@ -31,6 +31,10 @@ def statistics(plan):
         by_split[group["split"]] += group["count"]
         if group["source"] == "fruits360_multi":
             by_content[group["fruit_types"]] += group["count"]
+    for item in plan.get("local_items", []):
+        by_split[item["split"]] += 1
+        if item.get("scene_type") == "multi":
+            by_content[item["fruit_types"]] += 1
     return {"target_images": sum(by_split.values()), "by_split": dict(by_split),
             "multi_by_content": dict(by_content)}
 

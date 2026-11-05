@@ -1,0 +1,21 @@
+{
+  "updated_at": "2026-11-05T12:49:07.892652+00:00",
+  "status": "telecharge_a_revoir",
+  "planned_images": 48,
+  "available_images": 48,
+  "by_split": {
+    "mise_au_point": 33,
+    "evaluation": 15
+  },
+  "by_source": {
+    "fruits360_simple": 30,
+    "fruits360_multi": 18
+  },
+  "missing_images": [],
+  "invalid_images": [],
+  "missing_licenses": [],
+  "duplicate_groups": [],
+  "download_errors": [],
+  "visual_review_required": true,
+  "ground_truth_masks_available": false
+}

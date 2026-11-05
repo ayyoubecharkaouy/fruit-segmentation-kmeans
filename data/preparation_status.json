@@ -1,21 +1,29 @@
 {
-  "updated_at": "2026-11-05T12:49:07.892652+00:00",
+  "updated_at": "2026-11-05T13:47:27.978183+00:00",
   "status": "telecharge_a_revoir",
-  "planned_images": 48,
-  "available_images": 48,
+  "planned_images": 51,
+  "available_images": 51,
   "by_split": {
-    "mise_au_point": 33,
-    "evaluation": 15
+    "mise_au_point": 35,
+    "evaluation": 16
   },
   "by_source": {
     "fruits360_simple": 30,
-    "fruits360_multi": 18
+    "fruits360_multi": 18,
+    "kaggle_crops": 1,
+    "kaggle_chili": 2
   },
   "missing_images": [],
   "invalid_images": [],
   "missing_licenses": [],
   "duplicate_groups": [],
   "download_errors": [],
+  "untracked_images": [],
+  "provenance_pending": [
+    "img054",
+    "img055",
+    "img056"
+  ],
   "visual_review_required": true,
   "ground_truth_masks_available": false
 }

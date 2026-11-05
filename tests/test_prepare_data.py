@@ -102,6 +102,7 @@ class TransportTests(unittest.TestCase):
 class PreparationIntegrationTests(unittest.TestCase):
     def test_full_selection_and_resume_with_compact_api(self):
         plan = json.loads((preparation.DATA / "selection_plan.json").read_text())
+        plan.pop("local_items", None)  # Les imports locaux sont vérifiés par test_organize_data.
         api_payloads, image_payloads, trees = {}, {}, {}
 
         def digest(text):

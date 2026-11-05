@@ -4,8 +4,13 @@ Mini-projet de comparaison des segmentations en RGB, HSV circulaire et Lab, pour
 
 - [Pipeline complet du projet](PIPELINE_PROJET.md)
 - [Préparation du jeu d'images](data/README.md)
-- [Plan de sélection de 45 images](data/selection_plan.json)
+- [Plan de sélection actif](data/selection_plan.json)
 - [État réel des téléchargements](data/preparation_status.json)
+- [Organisation et noms des images](data/ORGANISATION.md)
+
+## Images organisées
+
+Le jeu actif contient **51 images**, réparties en **35 images de mise au point et 16 d'évaluation**. Les trois ajouts Kaggle sont rangés dans `data/raw/ajouts_manuels/`, avec des identifiants uniques et leurs références dans l'inventaire. Leurs licences restent à confirmer. Les 48 images Fruits-360 conservent leurs identifiants et leurs sources.
 
 ## Préparer les images
 

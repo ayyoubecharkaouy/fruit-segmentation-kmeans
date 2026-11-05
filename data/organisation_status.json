@@ -1,0 +1,28 @@
+{
+  "updated_at": "2026-11-05T13:43:44.075464+00:00",
+  "status": "organise",
+  "available_images": 51,
+  "renamed_files": [
+    {
+      "old_filename": "raw/fruits360_multi/img054.png",
+      "new_filename": "raw/ajouts_manuels/multi/img054.png",
+      "image_id": "img054"
+    },
+    {
+      "old_filename": "raw/fruits360_simple/img031.png",
+      "new_filename": "raw/ajouts_manuels/simple/img055.png",
+      "image_id": "img055"
+    },
+    {
+      "old_filename": "raw/fruits360_simple/img032.jpg",
+      "new_filename": "raw/ajouts_manuels/simple/img056.jpg",
+      "image_id": "img056"
+    }
+  ],
+  "archive": "history/20261105T134337074270Z_organisation",
+  "pending_licenses": [
+    "img054",
+    "img055",
+    "img056"
+  ]
+}

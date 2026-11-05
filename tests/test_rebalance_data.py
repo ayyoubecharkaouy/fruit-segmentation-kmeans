@@ -70,6 +70,7 @@ def fixture_responses(old_plan, target):
 class RebalanceTests(unittest.TestCase):
     def setUp(self):
         self.target = json.loads((prep.DATA / "selection_plan_balanced.json").read_text())
+        self.target.pop("local_items", None)
         # Le plan initial reste une fixture de 45 images même après activation locale de la v2.
         self.old_plan = {**self.target, "groups": [group for group in self.target["groups"]
                                                  if group["source"] == "fruits360_simple"]}

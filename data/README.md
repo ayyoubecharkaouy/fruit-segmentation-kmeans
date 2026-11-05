@@ -2,7 +2,7 @@
 
 ## État actuel
 
-Le premier téléchargement a fourni **45 images vérifiées** le 5 novembre 2026. Les effectifs actuellement actifs sont enregistrés dans `preparation_status.json` et les images correspondantes dans `metadata.csv`.
+**51 images sont inventoriées : 35 de mise au point et 16 d'évaluation.** Le jeu comprend les 48 images Fruits-360 obtenues après rééquilibrage et 3 ajouts Kaggle. Les effectifs actifs sont enregistrés dans `preparation_status.json` et les images correspondantes dans `metadata.csv`. La [fiche d'organisation](ORGANISATION.md) décrit les noms corrigés et les ajouts.
 
 Une première inspection du jeu initial montre 30 images individuelles sur fond blanc, une photo d'étal de pommes (`img031`), neuf photos de pommiers (`img032` à `img040`) et cinq photos de bananes sur fond sombre (`img041` à `img045`). Pour corriger cette surreprésentation des pommes, une [mise à jour vers 48 images](REBALANCEMENT.md) est disponible : 5 photos par produit et 3 scènes mixtes, en plus des 30 images individuelles. Elle s'applique avec `python scripts/rebalance_data.py`, depuis la racine du projet. `rebalance_status.json` indique si elle a effectivement réussi.
 
@@ -49,7 +49,10 @@ Cette sélection constitue un **jeu de démarrage**, avec plusieurs variétés e
 data/
 ├── raw/
 │   ├── fruits360_simple/       # 30 images originales
-│   ├── fruits360_multi/        # 15 photographies originales
+│   ├── fruits360_multi/        # 18 photographies originales
+│   ├── ajouts_manuels/
+│   │   ├── simple/            # 2 piments issus de Kaggle
+│   │   └── multi/             # 1 photo de bananes issue de Kaggle
 │   └── photos_personnelles/    # Réservé aux compléments futurs
 ├── licenses/                  # Licences des versions téléchargées
 ├── selection_plan.json        # Groupes, effectifs, graine et partitions prévus
@@ -65,6 +68,8 @@ La première exécution résout et enregistre les révisions Git des deux dépô
 Le script utilise les références et les arbres Git non récursifs pour limiter la taille des réponses de l'API. Il lit les réponses par blocs, vérifie leur longueur annoncée lorsqu'elle est fournie et réessaie jusqu'à trois fois si un transfert est interrompu ou si le JSON reçu est invalide. En cas d'échec persistant, le message précise l'URL concernée. Une erreur de résolution ne nécessite pas de supprimer `preparation_status.json` : il suffit de relancer le programme après correction du problème.
 
 Les images individuelles sont sélectionnées de manière déterministe dans les dossiers indiqués, avec la graine 42. Les photos multi sont définies par leurs noms ou par un filtre explicite dans le plan actif. Si les sources ont changé ou si un fichier manque, le script signale l'erreur ; aucune image de substitution n'est inventée.
+
+Les ajouts Kaggle sont déclarés dans `manual_additions.json` et inclus comme `local_items` dans les plans actifs. Ils sont contrôlés par leur SHA-256 local ; ils ne reçoivent pas d'empreinte Git ou de licence Fruits-360. Si l'un de ces fichiers manque, le programme demande sa restauration plutôt que de traiter l'URL du jeu de données comme celle d'une image.
 
 ## Vérification visuelle avant les expériences
 
