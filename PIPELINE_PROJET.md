@@ -12,6 +12,8 @@ Le projet doit répondre à trois questions :
 2. Comment le choix de K influence-t-il la segmentation ?
 3. Quelles sont les limites de la couleur lorsque plusieurs fruits ont une apparence proche ?
 
+**Périmètre étendu :** une reconnaissance supervisée de pommes, bananes et poivrons est implémentée en complément de l'étude K-means. Elle utilise un inventaire et des photos de diagnostic distincts, décrits dans [data/recognition/README.md](data/recognition/README.md). Les piments sont inclus dans la catégorie poivron. Aucun modèle préentraîné ni nouvel outil externe n'est nécessaire.
+
 > K-means produit des groupes de pixels de couleurs proches. Un numéro de cluster n'est pas une classe de fruit. Reconnaître automatiquement « pomme », « banane » ou « poivron » nécessite une étape supplémentaire d'association ou de classification. Une pomme verte et un poivron vert peuvent appartenir au même groupe de couleur.
 
 ### Livrables attendus
@@ -71,8 +73,6 @@ mini-projet/
 │   ├── processed/           # Images préparées
 │   ├── masks/               # Annotations de référence
 │   └── metadata.csv         # Source, conditions, catégorie, partition
-├── notebooks/
-│   └── exploration.ipynb
 ├── src/
 │   ├── preprocessing.py
 │   ├── color_spaces.py
@@ -133,8 +133,8 @@ Fruits-360 fournit des classes d'images, qui ne constituent pas des masques de s
 - [ ] Lire chaque image en RGB et gérer correctement son orientation.
 - [ ] Traiter explicitement les images en niveaux de gris ou avec transparence.
 - [ ] Utiliser des images sRGB ; convertir un autre profil colorimétrique vers sRGB ou documenter l'hypothèse en l'absence de profil.
-- [ ] Convertir les valeurs RGB en nombres flottants dans `[0, 1]`, **avant le redimensionnement**, puis vérifier leur plage.
 - [ ] Redimensionner en conservant les proportions, par exemple avec un côté maximal de **512 pixels** et sans agrandir les petites images.
+- [ ] Après le redimensionnement PIL, convertir les valeurs RGB en nombres flottants dans `[0, 1]`, puis vérifier leur plage.
 - [ ] Conserver exactement la même image préparée pour les trois espaces.
 - [ ] Vérifier visuellement un échantillon avant de lancer les expériences.
 
@@ -356,6 +356,8 @@ Ne pas annoncer à l'avance que HSV ou Lab sera meilleur. Les conclusions doiven
 ## 11. Étape 8 — Reconnaissance des fruits, en extension
 
 Cette étape complète la segmentation si l'on veut rapprocher le prototype du contexte des caisses automatiques.
+
+L'extension est disponible dans `src/region_recognition.py`, `src/recognition.py`, `src/train_recognition.py` et `src/recognize.py`. Elle combine des propositions K-means Lab, la séparation de certaines régions reliées, un SVM local et un rejet du fond appris sur les données du projet. Son inventaire distingue les 41 anciennes images d'apprentissage et les deux photos externes de diagnostic. Les partitions de la comparaison K-means sont conservées. La validation regroupe les régions par scène. Les photos de diagnostic participent au choix de la variante, sans ajuster ses poids : leur bilan n'est pas indépendant. Les limites et confusions résiduelles figurent dans le rapport.
 
 1. Extraire les régions candidates depuis les masques.
 2. Décrire chaque région par sa couleur dominante et, si nécessaire, par sa forme ou sa texture.
