@@ -1,0 +1,85 @@
+# Environnements Python locaux
+/.venv/
+/venv/
+/env/
+/ENV/
+
+# Caches Python, tests et notebooks
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.ipynb_checkpoints/
+/.cache/
+/.matplotlib/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Fichiers de construction et de distribution Python
+/build/
+/dist/
+*.egg-info/
+.eggs/
+
+# Configuration personnelle et identifiants locaux
+/.vscode/
+/.idea/
+/.agents/
+/.codex/
+/.aws/
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.key
+
+# Fichiers temporaires, téléchargements incomplets et journaux
+/tmp/
+/temp/
+/logs/
+*.tmp
+*.temp
+*.part
+*.partial
+*.log
+*.bak
+*.swp
+*.swo
+*~
+/core
+/core.[0-9]*
+
+# Fichiers propres au système d'exploitation
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Sauvegardes et préparation locales des données
+/data/staging/
+/data/history/
+/data/raw/photos_personnelles/*
+!/data/raw/photos_personnelles/.gitkeep
+
+# Cartes volumineuses, régénérées par src/segmentation.py
+/results/labels/*
+!/results/labels/.gitkeep
+
+# Exports de détail et mesures déjà regroupées dans global_results.csv
+/results/figures/*_clusters.png
+/results/figures/*_reconstruction.png
+/results/tables/img*_metrics.csv
+
+# Prédictions libres et anciens essais locaux de reconnaissance
+/results/recognition/predictions/
+/results/recognition/initial_protocol/
+/results/recognition/*.csv
+/results/recognition/*.json
+
+# Sources, données du projet, annotations, licences, modèles,
+# rapports, tableaux et figures de synthèse restent versionnables.
