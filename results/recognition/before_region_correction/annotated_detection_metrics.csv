@@ -1,0 +1,2 @@
+image_id,reference_class,n_reference_regions,tp,fp,fn
+external_test_img001,plusieurs,9,7,2,2

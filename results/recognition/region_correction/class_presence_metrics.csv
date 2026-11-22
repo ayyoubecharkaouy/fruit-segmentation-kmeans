@@ -1,0 +1,4 @@
+class_name,precision,recall,f1,n_images
+banane,1.0,1.0,1.0,2
+poivron,1.0,1.0,1.0,2
+pomme,1.0,1.0,1.0,2

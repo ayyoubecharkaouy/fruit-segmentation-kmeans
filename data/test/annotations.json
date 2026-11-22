@@ -1,0 +1,114 @@
+{
+  "test_img001.png": {
+    "image_sha256": "86a4ee63dbcd793cc8280573d3a4d78749c1f5ead65bb0e4335d8674da0f7728",
+    "image_size": [
+      1448,
+      1086
+    ],
+    "expected_classes": [
+      "banane",
+      "poivron",
+      "pomme"
+    ],
+    "source": "Images externes fournies pour le test ; catégories présentes indiquées lors de leur ajout.",
+    "boxes": [
+      {
+        "class_name": "pomme",
+        "bbox_normalized": [
+          0.13,
+          0.02,
+          0.325,
+          0.315
+        ]
+      },
+      {
+        "class_name": "pomme",
+        "bbox_normalized": [
+          0.41,
+          0.02,
+          0.615,
+          0.315
+        ]
+      },
+      {
+        "class_name": "pomme",
+        "bbox_normalized": [
+          0.7,
+          0.02,
+          0.91,
+          0.315
+        ]
+      },
+      {
+        "class_name": "banane",
+        "bbox_normalized": [
+          0.055,
+          0.275,
+          0.33,
+          0.58
+        ]
+      },
+      {
+        "class_name": "banane",
+        "bbox_normalized": [
+          0.35,
+          0.275,
+          0.64,
+          0.585
+        ]
+      },
+      {
+        "class_name": "banane",
+        "bbox_normalized": [
+          0.65,
+          0.29,
+          0.955,
+          0.585
+        ]
+      },
+      {
+        "class_name": "poivron",
+        "bbox_normalized": [
+          0.1,
+          0.585,
+          0.33,
+          0.97
+        ]
+      },
+      {
+        "class_name": "poivron",
+        "bbox_normalized": [
+          0.4,
+          0.585,
+          0.62,
+          0.97
+        ]
+      },
+      {
+        "class_name": "poivron",
+        "bbox_normalized": [
+          0.7,
+          0.585,
+          0.94,
+          0.965
+        ]
+      }
+    ],
+    "annotation_scope": "Boîtes approximatives des neuf objets, établies par inspection visuelle ; évaluation exploratoire."
+  },
+  "test_img002.png": {
+    "image_sha256": "c9c70bd19609d681bed42a8cf74d45732c65f0f70af5a3f5f53cdfe5ac5b520c",
+    "image_size": [
+      1536,
+      1024
+    ],
+    "expected_classes": [
+      "banane",
+      "poivron",
+      "pomme"
+    ],
+    "source": "Images externes fournies pour le test ; catégories présentes indiquées lors de leur ajout.",
+    "boxes": [],
+    "annotation_scope": "Évaluation de présence et analyse visuelle ; absence de référence exhaustive par objet."
+  }
+}

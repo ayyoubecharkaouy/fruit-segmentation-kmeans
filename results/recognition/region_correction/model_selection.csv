@@ -1,0 +1,5 @@
+classifier,macro_f1_image_weighted,accuracy_image_weighted,n_scenes,n_images,n_regions,augmented_regions
+svm_probability_c0.3,0.8328257079276252,0.8286210317460317,18,36,100,100
+svm_probability_c1,0.7786344180158711,0.7697172619047618,18,36,100,100
+rf_original_compact,0.7733697559741161,0.7759176587301587,18,36,100,100
+svm_probability_c3,0.6955001119902259,0.68328373015873,18,36,100,100

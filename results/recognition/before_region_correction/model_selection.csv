@@ -1,0 +1,6 @@
+classifier,feature_family,macro_f1_image_weighted,accuracy_image_weighted,n_scenes,n_images,n_regions
+random_forest_compact,compact,0.7733697559741161,0.7759176587301587,18,36,100
+random_forest_shape_colour,shape_colour,0.7479908441433162,0.7501240079365079,18,36,100
+random_forest,all,0.672247926151461,0.6744791666666666,18,36,100
+random_forest_geometry_texture,geometry_texture,0.6582720863095429,0.6490575396825398,18,36,100
+extra_trees,all,0.5131203254031315,0.5381944444444444,18,36,100

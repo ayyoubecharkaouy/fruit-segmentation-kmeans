@@ -1,0 +1,5 @@
+expected_class,banane,poivron,pomme,indetermine,aucun
+banane,3,0,0,0,0
+poivron,0,3,0,0,0
+pomme,0,1,2,0,0
+hors_reference,0,0,0,0,0

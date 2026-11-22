@@ -1,0 +1,350 @@
+{
+  "image": "/home/ayyoub/Documents/ensaj/s3/Vison_ordinateur/mini-projet/data/test/test_img002.png",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "processing_size": [
+    512,
+    341
+  ],
+  "classes_presentes": [
+    "banane",
+    "poivron"
+  ],
+  "regions_par_classe": {
+    "poivron": 6,
+    "banane": 11
+  },
+  "detections": [
+    {
+      "region_id": 1,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.54,
+      "class_scores": {
+        "banane": 0.42,
+        "poivron": 0.54,
+        "pomme": 0.04
+      },
+      "bbox": [
+        0,
+        201,
+        240,
+        478
+      ],
+      "area_processing_pixels": 2117
+    },
+    {
+      "region_id": 2,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.64,
+      "class_scores": {
+        "banane": 0.31333333333333335,
+        "poivron": 0.64,
+        "pomme": 0.04666666666666667
+      },
+      "bbox": [
+        24,
+        483,
+        222,
+        625
+      ],
+      "area_processing_pixels": 2042
+    },
+    {
+      "region_id": 3,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.5133333333333333,
+      "class_scores": {
+        "banane": 0.32,
+        "poivron": 0.5133333333333333,
+        "pomme": 0.16666666666666666
+      },
+      "bbox": [
+        168,
+        609,
+        273,
+        712
+      ],
+      "area_processing_pixels": 425
+    },
+    {
+      "region_id": 4,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.8133333333333334,
+      "class_scores": {
+        "banane": 0.8133333333333334,
+        "poivron": 0.16666666666666666,
+        "pomme": 0.02
+      },
+      "bbox": [
+        237,
+        894,
+        654,
+        1024
+      ],
+      "area_processing_pixels": 3577
+    },
+    {
+      "region_id": 5,
+      "label": "indetermine",
+      "candidate_label": "poivron",
+      "score": 0.44666666666666666,
+      "class_scores": {
+        "banane": 0.22,
+        "poivron": 0.44666666666666666,
+        "pomme": 0.3333333333333333
+      },
+      "bbox": [
+        291,
+        639,
+        531,
+        889
+      ],
+      "area_processing_pixels": 3663
+    },
+    {
+      "region_id": 6,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.54,
+      "class_scores": {
+        "banane": 0.54,
+        "poivron": 0.3333333333333333,
+        "pomme": 0.12666666666666668
+      },
+      "bbox": [
+        399,
+        96,
+        591,
+        370
+      ],
+      "area_processing_pixels": 1773
+    },
+    {
+      "region_id": 7,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.6466666666666666,
+      "class_scores": {
+        "banane": 0.6466666666666666,
+        "poivron": 0.2866666666666667,
+        "pomme": 0.06666666666666667
+      },
+      "bbox": [
+        525,
+        114,
+        636,
+        256
+      ],
+      "area_processing_pixels": 444
+    },
+    {
+      "region_id": 8,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.76,
+      "class_scores": {
+        "banane": 0.76,
+        "poivron": 0.22666666666666666,
+        "pomme": 0.013333333333333334
+      },
+      "bbox": [
+        537,
+        264,
+        684,
+        361
+      ],
+      "area_processing_pixels": 524
+    },
+    {
+      "region_id": 9,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7933333333333333,
+      "class_scores": {
+        "banane": 0.17333333333333334,
+        "poivron": 0.7933333333333333,
+        "pomme": 0.03333333333333333
+      },
+      "bbox": [
+        540,
+        495,
+        813,
+        778
+      ],
+      "area_processing_pixels": 5239
+    },
+    {
+      "region_id": 10,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7,
+      "class_scores": {
+        "banane": 0.24,
+        "poivron": 0.7,
+        "pomme": 0.06
+      },
+      "bbox": [
+        678,
+        144,
+        867,
+        388
+      ],
+      "area_processing_pixels": 2368
+    },
+    {
+      "region_id": 11,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.54,
+      "class_scores": {
+        "banane": 0.54,
+        "poivron": 0.4533333333333333,
+        "pomme": 0.006666666666666667
+      },
+      "bbox": [
+        864,
+        75,
+        1125,
+        364
+      ],
+      "area_processing_pixels": 4220
+    },
+    {
+      "region_id": 12,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.5933333333333334,
+      "class_scores": {
+        "banane": 0.5933333333333334,
+        "poivron": 0.37333333333333335,
+        "pomme": 0.03333333333333333
+      },
+      "bbox": [
+        990,
+        468,
+        1278,
+        790
+      ],
+      "area_processing_pixels": 5657
+    },
+    {
+      "region_id": 13,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.8666666666666667,
+      "class_scores": {
+        "banane": 0.8666666666666667,
+        "poivron": 0.11333333333333333,
+        "pomme": 0.02
+      },
+      "bbox": [
+        1092,
+        321,
+        1230,
+        493
+      ],
+      "area_processing_pixels": 620
+    },
+    {
+      "region_id": 14,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.6733333333333333,
+      "class_scores": {
+        "banane": 0.6733333333333333,
+        "poivron": 0.26,
+        "pomme": 0.06666666666666667
+      },
+      "bbox": [
+        1161,
+        273,
+        1308,
+        481
+      ],
+      "area_processing_pixels": 880
+    },
+    {
+      "region_id": 15,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.46,
+      "class_scores": {
+        "banane": 0.46,
+        "poivron": 0.46,
+        "pomme": 0.08
+      },
+      "bbox": [
+        1185,
+        801,
+        1536,
+        967
+      ],
+      "area_processing_pixels": 1542
+    },
+    {
+      "region_id": 16,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.8933333333333333,
+      "class_scores": {
+        "banane": 0.8933333333333333,
+        "poivron": 0.09333333333333334,
+        "pomme": 0.013333333333333334
+      },
+      "bbox": [
+        1218,
+        291,
+        1470,
+        493
+      ],
+      "area_processing_pixels": 1336
+    },
+    {
+      "region_id": 17,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.54,
+      "class_scores": {
+        "banane": 0.42,
+        "poivron": 0.54,
+        "pomme": 0.04
+      },
+      "bbox": [
+        1224,
+        717,
+        1536,
+        895
+      ],
+      "area_processing_pixels": 2919
+    },
+    {
+      "region_id": 18,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.6,
+      "class_scores": {
+        "banane": 0.6,
+        "poivron": 0.3,
+        "pomme": 0.1
+      },
+      "bbox": [
+        1299,
+        882,
+        1536,
+        1024
+      ],
+      "area_processing_pixels": 1255
+    }
+  ],
+  "min_score": 0.45,
+  "localisation": "adaptive_border_lab",
+  "score_interpretation": "moyenne des scores des arbres, non calibrée",
+  "bbox_convention": "[x_min, y_min, x_max, y_max[ dans la photo orientée",
+  "scope": "fonds relativement uniformes ; objets séparés ; objets en contact potentiellement fusionnés"
+}

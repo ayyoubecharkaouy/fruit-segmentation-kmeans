@@ -1,0 +1,105 @@
+{
+  "img032": {
+    "image_sha256": "0eb520c32fdc12b8e878e5fff8fd339b733c411aa5e8a0b0e576500b8b5e08c3",
+    "boxes_normalized": [
+      [
+        0.02,
+        0.02,
+        0.4,
+        0.28
+      ],
+      [
+        0.02,
+        0.58,
+        0.45,
+        0.98
+      ]
+    ],
+    "label": "autre",
+    "provenance": "Zones de feuillage, sol, paroi ou fond sombre délimitées par inspection visuelle dans les images d’apprentissage ; aucune photo de data/test."
+  },
+  "img033": {
+    "image_sha256": "c937233ebae9056247828d1e4f849a306d0c2a387bf49cefceeac9c7e0f520ac",
+    "boxes_normalized": [
+      [
+        0.72,
+        0.04,
+        0.98,
+        0.92
+      ]
+    ],
+    "label": "autre",
+    "provenance": "Zones de feuillage, sol, paroi ou fond sombre délimitées par inspection visuelle dans les images d’apprentissage ; aucune photo de data/test."
+  },
+  "img035": {
+    "image_sha256": "771d55c670d094f658fa1a05ef901b1bcbabec068bd6b1703027384d6fb2cc6a",
+    "boxes_normalized": [
+      [
+        0.68,
+        0.55,
+        0.98,
+        0.98
+      ]
+    ],
+    "label": "autre",
+    "provenance": "Zones de feuillage, sol, paroi ou fond sombre délimitées par inspection visuelle dans les images d’apprentissage ; aucune photo de data/test."
+  },
+  "img041": {
+    "image_sha256": "00e8bbf86a648f67cde044f162f34caefdd20996502f75b6f1d8a8a57155c6e2",
+    "boxes_normalized": [
+      [
+        0.02,
+        0.01,
+        0.98,
+        0.18
+      ],
+      [
+        0.03,
+        0.92,
+        0.9,
+        0.99
+      ]
+    ],
+    "label": "autre",
+    "provenance": "Zones de feuillage, sol, paroi ou fond sombre délimitées par inspection visuelle dans les images d’apprentissage ; aucune photo de data/test."
+  },
+  "img047": {
+    "image_sha256": "42d160cbe73e62caed68ffbf0859ae5e9fcdfae25c6e56e00c0bcbd2d206a3cf",
+    "boxes_normalized": [
+      [
+        0.89,
+        0.42,
+        0.99,
+        0.94
+      ]
+    ],
+    "label": "autre",
+    "provenance": "Zones de feuillage, sol, paroi ou fond sombre délimitées par inspection visuelle dans les images d’apprentissage ; aucune photo de data/test."
+  },
+  "img049": {
+    "image_sha256": "517f2ef584019c2fded3b04541373d195be2718b7ba7eeb0ea2e6f8a8964af35",
+    "boxes_normalized": [
+      [
+        0.87,
+        0.3,
+        0.99,
+        0.9
+      ]
+    ],
+    "label": "autre",
+    "provenance": "Zones de feuillage, sol, paroi ou fond sombre délimitées par inspection visuelle dans les images d’apprentissage ; aucune photo de data/test."
+  },
+  "img050": {
+    "image_sha256": "be682b6b2a73f60fe05709b692a292ec70c44e3f600011febfa1b351c59d2d4d",
+    "boxes_normalized": [
+      [
+        0.89,
+        0.48,
+        0.99,
+        0.96
+      ]
+    ],
+    "label": "autre",
+    "provenance": "Zones de feuillage, sol, paroi ou fond sombre délimitées par inspection visuelle dans les images d’apprentissage ; aucune photo de data/test."
+  }
+}

@@ -1,0 +1,752 @@
+{
+  "image": "/home/ayyoub/Documents/ensaj/s3/Vison_ordinateur/mini-projet/data/test/test_img002.png",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "processing_size": [
+    512,
+    341
+  ],
+  "classes_presentes": [
+    "banane",
+    "poivron",
+    "pomme"
+  ],
+  "regions_par_classe": {
+    "poivron": 10,
+    "pomme": 6,
+    "banane": 3
+  },
+  "detections": [
+    {
+      "region_id": 1,
+      "proposal_index": 14,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.9674686770526681,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.010736190761226817,
+        "poivron": 0.9674686770526681,
+        "pomme": 0.02179513218610496
+      },
+      "bbox": [
+        522,
+        495,
+        813,
+        778
+      ],
+      "area_processing_pixels": 5402
+    },
+    {
+      "region_id": 2,
+      "proposal_index": 38,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.949865587794978,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.01672359446924528,
+        "poivron": 0.949865587794978,
+        "pomme": 0.03341081773577693
+      },
+      "bbox": [
+        624,
+        102,
+        867,
+        388
+      ],
+      "area_processing_pixels": 5225
+    },
+    {
+      "region_id": 3,
+      "proposal_index": 37,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.9474370601941746,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.01012394302160803,
+        "poivron": 0.04243899678421727,
+        "pomme": 0.9474370601941746
+      },
+      "bbox": [
+        840,
+        75,
+        999,
+        202
+      ],
+      "area_processing_pixels": 1501
+    },
+    {
+      "region_id": 4,
+      "proposal_index": 39,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.9521923468237935,
+      "foreground_score": 0.9583333333333334,
+      "class_scores": {
+        "banane": 0.005949370264875162,
+        "poivron": 0.0418582829113313,
+        "pomme": 0.9521923468237935
+      },
+      "bbox": [
+        339,
+        225,
+        540,
+        373
+      ],
+      "area_processing_pixels": 2315
+    },
+    {
+      "region_id": 5,
+      "proposal_index": 17,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.8594904826190785,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.05574084146861619,
+        "poivron": 0.8594904826190785,
+        "pomme": 0.08476867591230541
+      },
+      "bbox": [
+        1179,
+        693,
+        1536,
+        1024
+      ],
+      "area_processing_pixels": 8599
+    },
+    {
+      "region_id": 6,
+      "proposal_index": 7,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.8105832610191199,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.8105832610191199,
+        "poivron": 0.10184086699060194,
+        "pomme": 0.08757587199027812
+      },
+      "bbox": [
+        1080,
+        234,
+        1476,
+        511
+      ],
+      "area_processing_pixels": 5851
+    },
+    {
+      "region_id": 7,
+      "proposal_index": 29,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.7830180526787646,
+      "foreground_score": 0.975,
+      "class_scores": {
+        "banane": 0.03266217330222612,
+        "poivron": 0.1843197740190095,
+        "pomme": 0.7830180526787646
+      },
+      "bbox": [
+        1230,
+        456,
+        1434,
+        649
+      ],
+      "area_processing_pixels": 3389
+    },
+    {
+      "region_id": 8,
+      "proposal_index": 15,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7767334678682526,
+      "foreground_score": 0.9583333333333334,
+      "class_scores": {
+        "banane": 0.07498277185645996,
+        "poivron": 0.7767334678682526,
+        "pomme": 0.1482837602752873
+      },
+      "bbox": [
+        15,
+        555,
+        141,
+        640
+      ],
+      "area_processing_pixels": 552
+    },
+    {
+      "region_id": 9,
+      "proposal_index": 42,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.7771460558444563,
+      "foreground_score": 0.95,
+      "class_scores": {
+        "banane": 0.021231949262307863,
+        "poivron": 0.20162199489323576,
+        "pomme": 0.7771460558444563
+      },
+      "bbox": [
+        390,
+        636,
+        531,
+        901
+      ],
+      "area_processing_pixels": 3412
+    },
+    {
+      "region_id": 10,
+      "proposal_index": 32,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7441237073457567,
+      "foreground_score": 0.9833333333333333,
+      "class_scores": {
+        "banane": 0.13018888570165846,
+        "poivron": 0.7441237073457567,
+        "pomme": 0.12568740695258465
+      },
+      "bbox": [
+        1125,
+        162,
+        1410,
+        412
+      ],
+      "area_processing_pixels": 3364
+    },
+    {
+      "region_id": 11,
+      "proposal_index": 19,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7223748406633275,
+      "foreground_score": 0.9833333333333333,
+      "class_scores": {
+        "banane": 0.14767807930757515,
+        "poivron": 0.7223748406633275,
+        "pomme": 0.1299470800290977
+      },
+      "bbox": [
+        0,
+        0,
+        294,
+        298
+      ],
+      "area_processing_pixels": 6827
+    },
+    {
+      "region_id": 12,
+      "proposal_index": 9,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7069876060286525,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.21319739261423348,
+        "poivron": 0.7069876060286525,
+        "pomme": 0.07981500135711389
+      },
+      "bbox": [
+        990,
+        543,
+        1281,
+        793
+      ],
+      "area_processing_pixels": 5684
+    },
+    {
+      "region_id": 13,
+      "proposal_index": 6,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.6765715806953274,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.2700479388054868,
+        "poivron": 0.6765715806953274,
+        "pomme": 0.05338048049918582
+      },
+      "bbox": [
+        879,
+        171,
+        1128,
+        367
+      ],
+      "area_processing_pixels": 3178
+    },
+    {
+      "region_id": 14,
+      "proposal_index": 10,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.6558474489082692,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.6558474489082692,
+        "poivron": 0.1770986783581752,
+        "pomme": 0.1670538727335555
+      },
+      "bbox": [
+        234,
+        795,
+        705,
+        1024
+      ],
+      "area_processing_pixels": 5769
+    },
+    {
+      "region_id": 15,
+      "proposal_index": 40,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.6377541776726643,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.03414032548099595,
+        "poivron": 0.32810549684633983,
+        "pomme": 0.6377541776726643
+      },
+      "bbox": [
+        984,
+        435,
+        1185,
+        580
+      ],
+      "area_processing_pixels": 1887
+    },
+    {
+      "region_id": 16,
+      "proposal_index": 4,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.6920569155353125,
+      "foreground_score": 0.85,
+      "class_scores": {
+        "banane": 0.11737737815804257,
+        "poivron": 0.6920569155353125,
+        "pomme": 0.1905657063066448
+      },
+      "bbox": [
+        84,
+        591,
+        387,
+        913
+      ],
+      "area_processing_pixels": 4298
+    },
+    {
+      "region_id": 17,
+      "proposal_index": 8,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.6041230468591647,
+      "foreground_score": 0.95,
+      "class_scores": {
+        "banane": 0.08798476810905155,
+        "poivron": 0.6041230468591647,
+        "pomme": 0.30789218503178367
+      },
+      "bbox": [
+        15,
+        483,
+        216,
+        607
+      ],
+      "area_processing_pixels": 1812
+    },
+    {
+      "region_id": 18,
+      "proposal_index": 5,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.49568489439230257,
+      "foreground_score": 1.0,
+      "class_scores": {
+        "banane": 0.49568489439230257,
+        "poivron": 0.32861780675658725,
+        "pomme": 0.17569729885111007
+      },
+      "bbox": [
+        432,
+        90,
+        684,
+        370
+      ],
+      "area_processing_pixels": 4245
+    },
+    {
+      "region_id": 19,
+      "proposal_index": 30,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.45734853301022316,
+      "foreground_score": 0.85,
+      "class_scores": {
+        "banane": 0.15549711398577876,
+        "poivron": 0.3871543530039982,
+        "pomme": 0.45734853301022316
+      },
+      "bbox": [
+        606,
+        465,
+        705,
+        580
+      ],
+      "area_processing_pixels": 601
+    }
+  ],
+  "rejected_regions": [
+    {
+      "region_id": 19,
+      "proposal_index": 18,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7093738969577064,
+      "foreground_score": 0.1,
+      "class_scores": {
+        "banane": 0.15597048645440045,
+        "poivron": 0.7093738969577064,
+        "pomme": 0.1346556165878934
+      },
+      "bbox": [
+        294,
+        0,
+        534,
+        265
+      ],
+      "area_processing_pixels": 4361,
+      "reason": "background"
+    },
+    {
+      "region_id": 21,
+      "proposal_index": 20,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7402325037176455,
+      "foreground_score": 0.1,
+      "class_scores": {
+        "banane": 0.11624552213760422,
+        "poivron": 0.7402325037176455,
+        "pomme": 0.14352197414475046
+      },
+      "bbox": [
+        237,
+        264,
+        438,
+        418
+      ],
+      "area_processing_pixels": 1433,
+      "reason": "background"
+    },
+    {
+      "region_id": 22,
+      "proposal_index": 21,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7196462250452808,
+      "foreground_score": 0.225,
+      "class_scores": {
+        "banane": 0.14897840813500512,
+        "poivron": 0.7196462250452808,
+        "pomme": 0.1313753668197143
+      },
+      "bbox": [
+        438,
+        306,
+        618,
+        688
+      ],
+      "area_processing_pixels": 2488,
+      "reason": "background"
+    },
+    {
+      "region_id": 23,
+      "proposal_index": 22,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7100539512061799,
+      "foreground_score": 0.4666666666666667,
+      "class_scores": {
+        "banane": 0.1544642581020642,
+        "poivron": 0.7100539512061799,
+        "pomme": 0.13548179069175617
+      },
+      "bbox": [
+        171,
+        447,
+        456,
+        670
+      ],
+      "area_processing_pixels": 3511,
+      "reason": "background"
+    },
+    {
+      "region_id": 24,
+      "proposal_index": 23,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7067544312348969,
+      "foreground_score": 0.0,
+      "class_scores": {
+        "banane": 0.1569341433440026,
+        "poivron": 0.7067544312348969,
+        "pomme": 0.13631142542110036
+      },
+      "bbox": [
+        516,
+        0,
+        1536,
+        325
+      ],
+      "area_processing_pixels": 16493,
+      "reason": "background"
+    },
+    {
+      "region_id": 25,
+      "proposal_index": 24,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7066853076799146,
+      "foreground_score": 0.1,
+      "class_scores": {
+        "banane": 0.15696023728430264,
+        "poivron": 0.7066853076799146,
+        "pomme": 0.13635445503578297
+      },
+      "bbox": [
+        1269,
+        297,
+        1536,
+        751
+      ],
+      "area_processing_pixels": 6511,
+      "reason": "background"
+    },
+    {
+      "region_id": 26,
+      "proposal_index": 25,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7067194245623875,
+      "foreground_score": 0.10833333333333334,
+      "class_scores": {
+        "banane": 0.15694073170368297,
+        "poivron": 0.7067194245623875,
+        "pomme": 0.13633984373392963
+      },
+      "bbox": [
+        678,
+        306,
+        1242,
+        1024
+      ],
+      "area_processing_pixels": 11659,
+      "reason": "background"
+    },
+    {
+      "region_id": 27,
+      "proposal_index": 26,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7066853076799146,
+      "foreground_score": 0.18333333333333332,
+      "class_scores": {
+        "banane": 0.15696023728430264,
+        "poivron": 0.7066853076799146,
+        "pomme": 0.13635445503578297
+      },
+      "bbox": [
+        0,
+        585,
+        321,
+        1009
+      ],
+      "area_processing_pixels": 6883,
+      "reason": "background"
+    },
+    {
+      "region_id": 28,
+      "proposal_index": 27,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7148423394077283,
+      "foreground_score": 0.4583333333333333,
+      "class_scores": {
+        "banane": 0.15282934469845097,
+        "poivron": 0.7148423394077283,
+        "pomme": 0.1323283158938208
+      },
+      "bbox": [
+        0,
+        0,
+        504,
+        643
+      ],
+      "area_processing_pixels": 17488,
+      "reason": "background"
+    },
+    {
+      "region_id": 29,
+      "proposal_index": 28,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7408487551471464,
+      "foreground_score": 0.016666666666666666,
+      "class_scores": {
+        "banane": 0.13251298119105168,
+        "poivron": 0.7408487551471464,
+        "pomme": 0.12663826366180186
+      },
+      "bbox": [
+        1386,
+        114,
+        1536,
+        391
+      ],
+      "area_processing_pixels": 2647,
+      "reason": "background"
+    },
+    {
+      "region_id": 32,
+      "proposal_index": 31,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7070018815598491,
+      "foreground_score": 0.15833333333333333,
+      "class_scores": {
+        "banane": 0.1567748304539223,
+        "poivron": 0.7070018815598491,
+        "pomme": 0.13622328798622863
+      },
+      "bbox": [
+        384,
+        9,
+        1053,
+        613
+      ],
+      "area_processing_pixels": 13347,
+      "reason": "background"
+    },
+    {
+      "region_id": 34,
+      "proposal_index": 33,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7212864749737162,
+      "foreground_score": 0.13333333333333333,
+      "class_scores": {
+        "banane": 0.14499385790521593,
+        "poivron": 0.7212864749737162,
+        "pomme": 0.13371966712106761
+      },
+      "bbox": [
+        168,
+        252,
+        393,
+        400
+      ],
+      "area_processing_pixels": 1037,
+      "reason": "background"
+    },
+    {
+      "region_id": 35,
+      "proposal_index": 34,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7073594061142701,
+      "foreground_score": 0.175,
+      "class_scores": {
+        "banane": 0.15653691974545397,
+        "poivron": 0.7073594061142701,
+        "pomme": 0.13610367414027558
+      },
+      "bbox": [
+        951,
+        684,
+        1536,
+        1024
+      ],
+      "area_processing_pixels": 9190,
+      "reason": "background"
+    },
+    {
+      "region_id": 36,
+      "proposal_index": 35,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.711491693034741,
+      "foreground_score": 0.058333333333333334,
+      "class_scores": {
+        "banane": 0.13545956658133715,
+        "poivron": 0.711491693034741,
+        "pomme": 0.15304874038392188
+      },
+      "bbox": [
+        498,
+        843,
+        1041,
+        1024
+      ],
+      "area_processing_pixels": 4757,
+      "reason": "background"
+    },
+    {
+      "region_id": 37,
+      "proposal_index": 36,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7120617121366384,
+      "foreground_score": 0.15,
+      "class_scores": {
+        "banane": 0.1501139239076933,
+        "poivron": 0.7120617121366384,
+        "pomme": 0.13782436395566836
+      },
+      "bbox": [
+        0,
+        816,
+        288,
+        1024
+      ],
+      "area_processing_pixels": 3257,
+      "reason": "background"
+    },
+    {
+      "region_id": 46,
+      "proposal_index": 45,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.7066853076799146,
+      "foreground_score": 0.55,
+      "class_scores": {
+        "banane": 0.15696023728430264,
+        "poivron": 0.7066853076799146,
+        "pomme": 0.13635445503578297
+      },
+      "bbox": [
+        0,
+        558,
+        324,
+        1024
+      ],
+      "area_processing_pixels": 10148,
+      "reason": "background"
+    }
+  ],
+  "candidate_count": 46,
+  "duplicates_removed": 11,
+  "min_score": 0.45,
+  "background_threshold": 0.5833333333333334,
+  "background_rejection_applied": true,
+  "model_sha256": "c764246ee9f7abbac9313536e20d07676592fa4dc141f015271e3d1c0a70382e",
+  "localisation": "kmeans_regions_with_background_rejection_v2",
+  "localisation_mode": "lab_kmeans_region_proposals",
+  "score_interpretation": "scores des classifieurs ; estimation probabiliste interne du SVM, fiabilité non établie sur les scènes externes",
+  "bbox_convention": "[x_min, y_min, x_max, y_max[ dans la photo orientée",
+  "scope": "méthode classique entraînée localement ; couleurs, contours, texture ; objets inconnus ou cachés non garantis"
+}

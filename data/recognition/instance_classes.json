@@ -1,0 +1,12 @@
+{
+  "img051": {
+    "annotation_sha256": "ca6e5568abc59293be203a18bf036de99abdc0ae492eadc721aa859acaa3d1f2",
+    "provenance": "Catégorisation par inspection visuelle des 32 polygones existants. Les polygones délimitent des pommes ; les bananes visibles au-dessous de la caisse ne sont pas incluses dans ces polygones.",
+    "shape_classes": [
+      "pomme", "pomme", "pomme", "pomme", "pomme", "pomme", "pomme", "pomme",
+      "pomme", "pomme", "pomme", "pomme", "pomme", "pomme", "pomme", "pomme",
+      "pomme", "pomme", "pomme", "pomme", "pomme", "pomme", "pomme", "pomme",
+      "pomme", "pomme", "pomme", "pomme", "pomme", "pomme", "pomme", "pomme"
+    ]
+  }
+}

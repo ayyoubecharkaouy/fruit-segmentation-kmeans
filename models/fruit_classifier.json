@@ -1,0 +1,503 @@
+{
+  "feature_version": "color_shape_texture_local_v2",
+  "feature_count": 733,
+  "classes": [
+    "banane",
+    "poivron",
+    "pomme"
+  ],
+  "class_aliases": {
+    "piment": "poivron"
+  },
+  "classifier": "svm_probability_c1",
+  "localisation": "kmeans_regions_with_background_rejection_v2",
+  "localisation_parameters": {
+    "k": 6,
+    "n_init": 5,
+    "random_state": 42,
+    "lab_weights": [
+      0.25,
+      1,
+      1
+    ],
+    "min_saturation": 0.15,
+    "closing_radius": 2,
+    "min_area_fraction": 0.003,
+    "max_area_fraction": 0.3,
+    "nms_iou": 0.45,
+    "containment": 0.85,
+    "split_maxima_fraction": 0.3,
+    "split_solidity": 0.9
+  },
+  "classifier_parameters": {
+    "C": 1.0,
+    "break_ties": false,
+    "cache_size": 200,
+    "class_weight": null,
+    "coef0": 0.0,
+    "decision_function_shape": "ovr",
+    "degree": 3,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "max_iter": -1,
+    "probability": true,
+    "random_state": 42,
+    "shrinking": true,
+    "tol": 0.001,
+    "verbose": false
+  },
+  "training_protocol": "external_test_photos",
+  "training_split": "recognition_train",
+  "training_image_ids": [
+    "img001",
+    "img002",
+    "img003",
+    "img004",
+    "img005",
+    "img006",
+    "img007",
+    "img008",
+    "img009",
+    "img010",
+    "img011",
+    "img012",
+    "img013",
+    "img014",
+    "img015",
+    "img016",
+    "img017",
+    "img018",
+    "img019",
+    "img020",
+    "img021",
+    "img022",
+    "img023",
+    "img024",
+    "img025",
+    "img026",
+    "img027",
+    "img028",
+    "img029",
+    "img030",
+    "img032",
+    "img033",
+    "img035",
+    "img041",
+    "img046",
+    "img047",
+    "img049",
+    "img050",
+    "img051",
+    "img055",
+    "img056"
+  ],
+  "training_scene_ids": [
+    "banane_1",
+    "banane_3",
+    "banane_4",
+    "banane_lady_finger",
+    "banane_red",
+    "kaggle_chili_fond_simple",
+    "melanges_pommes_bananes",
+    "poivron_green",
+    "poivron_orange",
+    "poivron_red",
+    "poivron_yellow",
+    "poivrons_multi",
+    "pomme_braeburn",
+    "pomme_golden",
+    "pomme_granny",
+    "pomme_pink_lady",
+    "pomme_red",
+    "pommes_multi"
+  ],
+  "n_regions": 100,
+  "augmented_regions": 800,
+  "classification_uses_augmentation": false,
+  "classification_training_regions": 100,
+  "background_regions": 173,
+  "background_classifier_parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 120,
+    "n_jobs": 1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "background_feature_columns": [
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    605,
+    606,
+    607,
+    608,
+    609,
+    610,
+    611,
+    612,
+    613,
+    614
+  ],
+  "min_score": 0.45,
+  "background_threshold": 0.5833333333333334,
+  "background_threshold_selection": "maximum de l’exactitude équilibrée sur la validation par scènes",
+  "background_cv": [
+    {
+      "threshold": 0.0,
+      "fruit_recall": 1.0,
+      "background_specificity": 0.0,
+      "balanced_accuracy": 0.5
+    },
+    {
+      "threshold": 0.008333333333333333,
+      "fruit_recall": 0.9550696780394041,
+      "background_specificity": 0.7664189797074408,
+      "balanced_accuracy": 0.8607443288734224
+    },
+    {
+      "threshold": 0.016666666666666666,
+      "fruit_recall": 0.8427438731379147,
+      "background_specificity": 0.8100363200159942,
+      "balanced_accuracy": 0.8263900965769544
+    },
+    {
+      "threshold": 0.03333333333333333,
+      "fruit_recall": 0.8427438731379147,
+      "background_specificity": 0.8287294658625172,
+      "balanced_accuracy": 0.835736669500216
+    },
+    {
+      "threshold": 0.24166666666666667,
+      "fruit_recall": 0.8427438731379147,
+      "background_specificity": 0.8411915630935325,
+      "balanced_accuracy": 0.8419677181157236
+    },
+    {
+      "threshold": 0.25,
+      "fruit_recall": 0.8427438731379147,
+      "background_specificity": 0.8474226117090401,
+      "balanced_accuracy": 0.8450832424234773
+    },
+    {
+      "threshold": 0.25833333333333336,
+      "fruit_recall": 0.839233691734743,
+      "background_specificity": 0.8474226117090401,
+      "balanced_accuracy": 0.8433281517218916
+    },
+    {
+      "threshold": 0.2833333333333333,
+      "fruit_recall": 0.839233691734743,
+      "background_specificity": 0.8536536603245476,
+      "balanced_accuracy": 0.8464436760296453
+    },
+    {
+      "threshold": 0.2916666666666667,
+      "fruit_recall": 0.839233691734743,
+      "background_specificity": 0.8661157575555628,
+      "balanced_accuracy": 0.8526747246451529
+    },
+    {
+      "threshold": 0.30833333333333335,
+      "fruit_recall": 0.839233691734743,
+      "background_specificity": 0.8785778547865782,
+      "balanced_accuracy": 0.8589057732606606
+    },
+    {
+      "threshold": 0.31666666666666665,
+      "fruit_recall": 0.8357235103315716,
+      "background_specificity": 0.8785778547865782,
+      "balanced_accuracy": 0.8571506825590749
+    },
+    {
+      "threshold": 0.36666666666666664,
+      "fruit_recall": 0.8357235103315716,
+      "background_specificity": 0.8848089034020858,
+      "balanced_accuracy": 0.8602662068668288
+    },
+    {
+      "threshold": 0.375,
+      "fruit_recall": 0.8357235103315716,
+      "background_specificity": 0.8910399520175936,
+      "balanced_accuracy": 0.8633817311745826
+    },
+    {
+      "threshold": 0.39166666666666666,
+      "fruit_recall": 0.8357235103315716,
+      "background_specificity": 0.9035020492486088,
+      "balanced_accuracy": 0.8696127797900901
+    },
+    {
+      "threshold": 0.4,
+      "fruit_recall": 0.8357235103315716,
+      "background_specificity": 0.9097330978641165,
+      "balanced_accuracy": 0.872728304097844
+    },
+    {
+      "threshold": 0.44166666666666665,
+      "fruit_recall": 0.8357235103315716,
+      "background_specificity": 0.9221951950951318,
+      "balanced_accuracy": 0.8789593527133517
+    },
+    {
+      "threshold": 0.45,
+      "fruit_recall": 0.8322133289283999,
+      "background_specificity": 0.9221951950951318,
+      "balanced_accuracy": 0.8772042620117659
+    },
+    {
+      "threshold": 0.4583333333333333,
+      "fruit_recall": 0.8322133289283999,
+      "background_specificity": 0.9258605178101363,
+      "balanced_accuracy": 0.8790369233692681
+    },
+    {
+      "threshold": 0.4666666666666667,
+      "fruit_recall": 0.8322133289283999,
+      "background_specificity": 0.9339242277831462,
+      "balanced_accuracy": 0.8830687783557731
+    },
+    {
+      "threshold": 0.48333333333333334,
+      "fruit_recall": 0.8322133289283999,
+      "background_specificity": 0.9449201959281597,
+      "balanced_accuracy": 0.8885667624282798
+    },
+    {
+      "threshold": 0.49166666666666664,
+      "fruit_recall": 0.8322133289283999,
+      "background_specificity": 0.9467528572856618,
+      "balanced_accuracy": 0.8894830931070309
+    },
+    {
+      "threshold": 0.55,
+      "fruit_recall": 0.8322133289283999,
+      "background_specificity": 0.9529839059011694,
+      "balanced_accuracy": 0.8925986174147846
+    },
+    {
+      "threshold": 0.5583333333333333,
+      "fruit_recall": 0.8322133289283999,
+      "background_specificity": 0.9592149545166772,
+      "balanced_accuracy": 0.8957141417225385
+    },
+    {
+      "threshold": 0.5833333333333334,
+      "fruit_recall": 0.8322133289283999,
+      "background_specificity": 0.9654460031321848,
+      "balanced_accuracy": 0.8988296660302924
+    },
+    {
+      "threshold": 0.65,
+      "fruit_recall": 0.809748167948102,
+      "background_specificity": 0.9654460031321848,
+      "balanced_accuracy": 0.8875970855401434
+    },
+    {
+      "threshold": 0.6833333333333333,
+      "fruit_recall": 0.809748167948102,
+      "background_specificity": 0.9716770517476924,
+      "balanced_accuracy": 0.8907126098478972
+    },
+    {
+      "threshold": 0.7833333333333333,
+      "fruit_recall": 0.8062379865449305,
+      "background_specificity": 0.9716770517476924,
+      "balanced_accuracy": 0.8889575191463115
+    },
+    {
+      "threshold": 0.85,
+      "fruit_recall": 0.7837728255646325,
+      "background_specificity": 0.9773416413981539,
+      "balanced_accuracy": 0.8805572334813931
+    },
+    {
+      "threshold": 0.8583333333333333,
+      "fruit_recall": 0.7837728255646325,
+      "background_specificity": 0.9801739362233847,
+      "balanced_accuracy": 0.8819733808940086
+    },
+    {
+      "threshold": 0.8666666666666667,
+      "fruit_recall": 0.7837728255646325,
+      "background_specificity": 0.9886708206990769,
+      "balanced_accuracy": 0.8862218231318546
+    },
+    {
+      "threshold": 0.8833333333333333,
+      "fruit_recall": 0.7613076645843345,
+      "background_specificity": 0.9971677051747692,
+      "balanced_accuracy": 0.8792376848795518
+    },
+    {
+      "threshold": 0.9083333333333333,
+      "fruit_recall": 0.7388425036040366,
+      "background_specificity": 0.9971677051747692,
+      "balanced_accuracy": 0.8680051043894028
+    },
+    {
+      "threshold": 0.9166666666666666,
+      "fruit_recall": 0.7388425036040366,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.8694212518020183
+    },
+    {
+      "threshold": 0.925,
+      "fruit_recall": 0.7353323222008651,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.8676661611004326
+    },
+    {
+      "threshold": 0.9333333333333333,
+      "fruit_recall": 0.728311959394522,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.864155979697261
+    },
+    {
+      "threshold": 0.9416666666666667,
+      "fruit_recall": 0.7248017779913504,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.8624008889956751
+    },
+    {
+      "threshold": 0.95,
+      "fruit_recall": 0.7072508709754927,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.8536254354877464
+    },
+    {
+      "threshold": 0.9583333333333334,
+      "fruit_recall": 0.696720326765978,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.8483601633829889
+    },
+    {
+      "threshold": 0.975,
+      "fruit_recall": 0.6896999639596348,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.8448499819798174
+    },
+    {
+      "threshold": 0.9916666666666667,
+      "fruit_recall": 0.6672348029793369,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.8336174014896685
+    },
+    {
+      "threshold": 1.0,
+      "fruit_recall": 0.6197441134070159,
+      "background_specificity": 1.0,
+      "balanced_accuracy": 0.8098720567035079
+    }
+  ],
+  "cv_scores": [
+    {
+      "classifier": "svm_probability_c0.3",
+      "macro_f1_image_weighted": 0.8328257079276252,
+      "accuracy_image_weighted": 0.8286210317460317,
+      "n_scenes": 18,
+      "n_images": 36,
+      "n_regions": 100,
+      "augmented_regions": 100
+    },
+    {
+      "classifier": "svm_probability_c1",
+      "macro_f1_image_weighted": 0.7786344180158711,
+      "accuracy_image_weighted": 0.7697172619047618,
+      "n_scenes": 18,
+      "n_images": 36,
+      "n_regions": 100,
+      "augmented_regions": 100
+    },
+    {
+      "classifier": "rf_original_compact",
+      "macro_f1_image_weighted": 0.7733697559741161,
+      "accuracy_image_weighted": 0.7759176587301587,
+      "n_scenes": 18,
+      "n_images": 36,
+      "n_regions": 100,
+      "augmented_regions": 100
+    },
+    {
+      "classifier": "svm_probability_c3",
+      "macro_f1_image_weighted": 0.6955001119902259,
+      "accuracy_image_weighted": 0.68328373015873,
+      "n_scenes": 18,
+      "n_images": 36,
+      "n_regions": 100,
+      "augmented_regions": 100
+    }
+  ],
+  "validation": "LeaveOneGroupOut par scene_id ; estimation probabiliste interne du SVM dans chaque partition d’apprentissage",
+  "external_images_used_for_fitting": false,
+  "fitting_scope": "Apprentissage supervisé des classifieurs ; les centres K-means sont calculés séparément dans chaque photo à l’inférence.",
+  "versions": {
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "scikit-image": "0.26.0",
+    "Pillow": "13.0.0"
+  },
+  "dataset_manifest_sha256": "a81e4b8ed7d53dcdbbd55fc81253422d0645826e89fe3dd8921839741122091a",
+  "background_annotations_sha256": "bd7f4e5d24e71fee3d074f34dcf81abd2b3c5a6bae33f1160f02635800c36bf3",
+  "score_interpretation": "scores des classifieurs ; estimation probabiliste interne du SVM, fiabilité non établie sur les scènes externes",
+  "external_images_used_for_model_selection": true,
+  "model_selection": "diagnostic_development_selection"
+}

@@ -1,0 +1,190 @@
+{
+  "image": "/home/ayyoub/Documents/ensaj/s3/Vison_ordinateur/mini-projet/data/test/test_img001.png",
+  "image_size": [
+    1448,
+    1086
+  ],
+  "processing_size": [
+    512,
+    384
+  ],
+  "classes_presentes": [
+    "banane",
+    "poivron",
+    "pomme"
+  ],
+  "regions_par_classe": {
+    "banane": 3,
+    "pomme": 3,
+    "poivron": 1
+  },
+  "detections": [
+    {
+      "region_id": 1,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.9466666666666667,
+      "class_scores": {
+        "banane": 0.9466666666666667,
+        "poivron": 0.02666666666666667,
+        "pomme": 0.02666666666666667
+      },
+      "bbox": [
+        84,
+        305,
+        470,
+        620
+      ],
+      "area_processing_pixels": 6853
+    },
+    {
+      "region_id": 2,
+      "label": "indetermine",
+      "candidate_label": "poivron",
+      "score": 0.41333333333333333,
+      "class_scores": {
+        "banane": 0.2733333333333333,
+        "poivron": 0.41333333333333333,
+        "pomme": 0.31333333333333335
+      },
+      "bbox": [
+        158,
+        641,
+        461,
+        1036
+      ],
+      "area_processing_pixels": 11351
+    },
+    {
+      "region_id": 3,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.7933333333333333,
+      "class_scores": {
+        "banane": 0.10666666666666667,
+        "poivron": 0.1,
+        "pomme": 0.7933333333333333
+      },
+      "bbox": [
+        192,
+        33,
+        453,
+        340
+      ],
+      "area_processing_pixels": 7674
+    },
+    {
+      "region_id": 4,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.86,
+      "class_scores": {
+        "banane": 0.86,
+        "poivron": 0.10666666666666667,
+        "pomme": 0.03333333333333333
+      },
+      "bbox": [
+        511,
+        308,
+        914,
+        623
+      ],
+      "area_processing_pixels": 6867
+    },
+    {
+      "region_id": 5,
+      "label": "poivron",
+      "candidate_label": "poivron",
+      "score": 0.58,
+      "class_scores": {
+        "banane": 0.3933333333333333,
+        "poivron": 0.58,
+        "pomme": 0.02666666666666667
+      },
+      "bbox": [
+        585,
+        644,
+        880,
+        1038
+      ],
+      "area_processing_pixels": 11019
+    },
+    {
+      "region_id": 6,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.8133333333333334,
+      "class_scores": {
+        "banane": 0.05333333333333334,
+        "poivron": 0.13333333333333333,
+        "pomme": 0.8133333333333334
+      },
+      "bbox": [
+        602,
+        33,
+        874,
+        334
+      ],
+      "area_processing_pixels": 7924
+    },
+    {
+      "region_id": 7,
+      "label": "banane",
+      "candidate_label": "banane",
+      "score": 0.9266666666666666,
+      "class_scores": {
+        "banane": 0.9266666666666666,
+        "poivron": 0.04666666666666667,
+        "pomme": 0.02666666666666667
+      },
+      "bbox": [
+        947,
+        328,
+        1369,
+        623
+      ],
+      "area_processing_pixels": 7316
+    },
+    {
+      "region_id": 8,
+      "label": "pomme",
+      "candidate_label": "pomme",
+      "score": 0.86,
+      "class_scores": {
+        "banane": 0.02,
+        "poivron": 0.12,
+        "pomme": 0.86
+      },
+      "bbox": [
+        1018,
+        31,
+        1299,
+        340
+      ],
+      "area_processing_pixels": 8434
+    },
+    {
+      "region_id": 9,
+      "label": "indetermine",
+      "candidate_label": "pomme",
+      "score": 0.44,
+      "class_scores": {
+        "banane": 0.23333333333333334,
+        "poivron": 0.32666666666666666,
+        "pomme": 0.44
+      },
+      "bbox": [
+        1029,
+        644,
+        1330,
+        1033
+      ],
+      "area_processing_pixels": 10694
+    }
+  ],
+  "min_score": 0.45,
+  "localisation": "adaptive_border_lab",
+  "score_interpretation": "moyenne des scores des arbres, non calibrée",
+  "bbox_convention": "[x_min, y_min, x_max, y_max[ dans la photo orientée",
+  "scope": "fonds relativement uniformes ; objets séparés ; objets en contact potentiellement fusionnés"
+}
