@@ -1,9 +1,10 @@
 # test de pretretement d'une seul image
 
 # importations des bibliotheques necessaires
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageCms
 import numpy as np
 import os
+import io
 import pandas as pd
 
 def preprocess_image(image_path, output_path):
@@ -19,8 +20,23 @@ def preprocess_image(image_path, output_path):
     # corriger son orientation (orienter l'image dans le bon sens selon les métadonnées EXIF)
     image = ImageOps.exif_transpose(image)
 
-    # convertir l'image en RGB, pour avoir 3 canaux de couleur (rouge, vert, bleu) pour chaque pixel de l'image
-    image = image.convert('RGB')
+    # lire le profil couleur ICC, lorsqu'il est présent
+    icc_profile = image.info.get('icc_profile')
+    srgb_profile = ImageCms.ImageCmsProfile(ImageCms.createProfile('sRGB'))
+
+    if icc_profile:
+        # convertir les couleurs du profil d'origine vers sRGB
+        source_profile = ImageCms.ImageCmsProfile(io.BytesIO(icc_profile))
+        image = ImageCms.profileToProfile(
+            image,
+            source_profile,
+            srgb_profile,
+            renderingIntent=ImageCms.Intent.RELATIVE_COLORIMETRIC,
+            outputMode='RGB',
+        )
+    else:
+        # hypothèse du projet : les images sans profil ICC sont en sRGB
+        image = image.convert('RGB')
 
     # en reduisant la taille de l'image a 512x512 pixels au maximum (pour ne pas avoir des images trop grandes qui peuvent ralentir le traitement)
     if image.size[0] > 512 or image.size[1] > 512:
@@ -42,7 +58,11 @@ def preprocess_image(image_path, output_path):
     # enregistrer l'image au format PNG dans le dossier data/processed
     # creer le dossier data/processed s'il n'existe pas
     os.makedirs(output_path, exist_ok=True)
-    image.save(os.path.join(output_path, image_name.replace(image_name.split('.')[-1], 'png')), format='PNG')
+    image.save(
+        os.path.join(output_path, image_name.replace(image_name.split('.')[-1], 'png')),
+        format='PNG',
+        icc_profile=srgb_profile.tobytes(),
+    )
 
     return image_norm
 

@@ -1,4 +1,9 @@
-PIL
+Pillow
 numpy
 pandas
 labelme
+scikit-image
+scikit-learn<1.11
+matplotlib
+scipy
+joblib

@@ -1,0 +1,2 @@
+color_space,k,seed,selection_method,iou_mean,iou_std,iou_count,dice_mean,dice_std,dice_count
+Lab,3,42,border_majority_2pct,0.948490674788386,0.035310196491044374,5,0.9732929644661009,0.018730164481187816,5

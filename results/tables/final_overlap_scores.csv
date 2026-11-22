@@ -1,0 +1,6 @@
+image_id,color_space,k,seed,split,background_cluster,selection_method,iou,dice
+img007,Lab,3,42,evaluation,0,border_majority_2pct,0.9700193423597679,0.9847815414825725
+img009,Lab,3,42,evaluation,1,border_majority_2pct,0.9711081794195251,0.9853423465631483
+img020,Lab,3,42,evaluation,1,border_majority_2pct,0.916191155492154,0.9562627954587753
+img027,Lab,3,42,evaluation,0,border_majority_2pct,0.980638166047088,0.9902244467036835
+img041,Lab,3,42,evaluation,0,border_majority_2pct,0.9044965306233951,0.9498536921223248
